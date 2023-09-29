@@ -1,11 +1,11 @@
 package br.com.bradseg.swagger.bsad.api;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.HttpServletResponse;
-
-import org.apache.tomcat.jni.FileInfo;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -16,11 +16,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -38,7 +36,9 @@ public class DisponibilizaCondicoesGeraisController {
             responses = {
                     @ApiResponse(
                             description = "Sucesso",
-                            responseCode = "200"
+                            responseCode = "200",
+                            content = @Content(mediaType = "application/json",
+                                    schema = @Schema(type = "String", format = "byte"))
                     ),
                     @ApiResponse(
                             description = "Documento não encontrado",
@@ -66,5 +66,6 @@ public class DisponibilizaCondicoesGeraisController {
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(resource);
     }
+
 
 }

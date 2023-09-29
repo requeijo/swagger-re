@@ -5,7 +5,7 @@ import br.com.bradseg.swagger.bsad.model.enums.SegmentoEnum;
 
 import java.time.LocalDate;
 
-public class Renovacao {
+public class ConsultaRenovacao {
 
     public String cpf;
     public Long numeroProposta;

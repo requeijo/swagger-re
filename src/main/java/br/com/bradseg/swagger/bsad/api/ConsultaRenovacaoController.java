@@ -1,6 +1,6 @@
 package br.com.bradseg.swagger.bsad.api;
 
-import br.com.bradseg.swagger.bsad.model.Renovacao;
+import br.com.bradseg.swagger.bsad.model.ConsultaRenovacao;
 import br.com.bradseg.swagger.bsad.model.enums.SegmentoEnum;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -35,10 +35,10 @@ public class ConsultaRenovacaoController {
 
     )
     @GetMapping("/{cpf}")
-    public List<Renovacao> consultar(@PathVariable("cpf") final  String cpf) {
+    public List<ConsultaRenovacao> consultar(@PathVariable("cpf") final  String cpf) {
 
-        List<Renovacao> list = new ArrayList<>();
-        Renovacao c = new Renovacao();
+        List<ConsultaRenovacao> list = new ArrayList<>();
+        ConsultaRenovacao c = new ConsultaRenovacao();
         c.dataInicioVigencia = LocalDate.now();
         c.dataTerminoVigencia = c.dataInicioVigencia.plusMonths(12);
         c.nomeProduto = SegmentoEnum.RESIDENCIA_EXCLUSIVE;

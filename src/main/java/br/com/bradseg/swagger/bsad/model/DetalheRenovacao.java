@@ -24,8 +24,10 @@ public class DetalheRenovacao {
 
     public List<Cobertura> coberturas;
 
+    public Double valorCapital;
     public Double valorPremio;
     public Double valorFranquia;
+
     public List<Assistencia> assistencias;
     public TipoImovelEnum tipoImovel;
     public Endereco enderecoImovel;
