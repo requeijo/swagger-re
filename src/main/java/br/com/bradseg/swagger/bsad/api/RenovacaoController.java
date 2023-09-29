@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/renovacao")
-@Tag(name = "renovacao")
+@RequestMapping("/v1/detalhe")
+@Tag(name = "detalhe")
 public class RenovacaoController {
 
     @Operation(

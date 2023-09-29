@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/v1/proposta")
-@Tag(name = "consulta")
+@Tag(name = "proposta")
 public class PropostaController {
 }
