@@ -1,6 +1,7 @@
 package br.com.bradseg.swagger.bsad.api;
 
 import br.com.bradseg.swagger.bsad.model.DetalheRenovacao;
+import br.com.bradseg.swagger.bsad.model.domino.Segurado;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -10,31 +11,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/detalhe")
-@Tag(name = "detalhe")
-public class RenovacaoController {
+@RequestMapping("/v1/segurado")
+@Tag(name = "segurado")
+public class RecuperaSeguradoController {
 
     @Operation(
-            description = "Consulta as renovações",
-            summary = "Lista as renovações para um correntista",
+            description = "Obtem os dados do segurado para renovação do App Nova Jornada RE",
+            summary = "Recupera os dados de um segurado",
             responses = {
                     @ApiResponse(
                             description = "Sucesso",
                             responseCode = "200"
                     ),
                     @ApiResponse(
-                            description = "Correntista não encontrado para o CPF ou proposta invalida",
+                            description = "Este segurado não foi encontrado!",
                             responseCode = "204"
                     )
             }
 
     )
-    @GetMapping("/{cpf}/{proposta}")
-    public DetalheRenovacao renovar(@PathVariable("cpf") final String cpf, @PathVariable("proposta") final String proposta) {
+    @GetMapping("/{cpf}")
+    public Segurado recuperar(@PathVariable("cpf") final String cpf) {
 
-        DetalheRenovacao apol = new DetalheRenovacao();
-
-        return apol;
+        Segurado obj = new Segurado();
+        return obj;
     }
 
 }

@@ -17,7 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/consulta")
 @Tag(name = "consulta")
-public class ConsultaController {
+public class ConsultaRenovacaoController {
 
     @Operation(
             description = "Consulta as renovações",
